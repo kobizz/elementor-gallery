@@ -33,6 +33,7 @@ export default class Masonry extends BaseGalleryType {
 			let indexAtRow = index % columns;
 
 			naturalColumnHeight = heights[ indexAtRow ];
+
 			jQuery.each( heights, ( colNumber, currentColHeight ) => {
 				if ( currentColHeight && naturalColumnHeight > currentColHeight + 5 ) {
 					naturalColumnHeight = currentColHeight;
@@ -46,6 +47,7 @@ export default class Masonry extends BaseGalleryType {
 			item.style.setProperty( '--item-height', ( imageData.height / imageData.width * 100 ) + '%' );
 			item.style.setProperty( '--column', indexAtRow );
 			item.style.setProperty( '--items-in-column', itemsInColumn[ indexAtRow ] );
+
 			itemsInColumn[ indexAtRow ]++;
 		} );
 
